@@ -34,28 +34,26 @@ $docker images
 > docker container 구동
 
 ```bash
-docker run -d -p 8080:8008 --name docker-sample-container docker-sample
+$docker run -d -p 8080:8008 --name docker-sample-container docker-sample
 ```
 
 > docker container 프로세스 확인
 
 ```bash
-docker ps
-docker ps -a (정지된 컨테이너) 
+$docker ps
+$docker ps -a (정지된 컨테이너) 
 ```
 
 > docker container 프로세스 정지 및 삭제
 > 
 ```bash
-docker stop [container ID]
-docker rm [container ID]
+$docker stop [container ID]
+$docker rm [container ID]
 ````
 
 > docker cli 
 
 ```bash
-docker exec --help 
-docker exec -it dockersample_container bash
+$docker exec --help 
+$docker exec -it dockersample_container bash
 ```
-
-
