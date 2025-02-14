@@ -1,0 +1,44 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: docker-sample
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: docker-sample
+  template:
+    metadata:
+      labels:
+        app: docker-sample
+    spec:
+      containers:
+        - name: docker-sample
+          image: gwanhyeon0525/docker-sample
+          imagePullPolicy: Never   # 이 줄을 추가
+          ports:
+            - containerPort: 8080
+
+#
+#          env:
+#            - name: SPRING_PROFILES_ACTIVE
+#              value: "prod"
+#          resources:
+#            requests:
+#              cpu: 100m
+#              memory: 256Mi
+#            limits:
+#              cpu: 500m
+#              memory: 512Mi
+#          readinessProbe:
+#            httpGet:
+#              path: /actuator/health
+#              port: 8008
+#            initialDelaySeconds: 3
+#            periodSeconds: 5
+#          livenessProbe:
+#            httpGet:
+#              path: /actuator/health
+#              port: 8008
+#            initialDelaySeconds: 3
+#            periodSeconds: 3

@@ -1,0 +1,11 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: docker-sample-service
+spec:
+  selector:
+    app: docker-sample
+  ports:
+    - port: 8080
+      targetPort: 8080
+  type: ClusterIP
